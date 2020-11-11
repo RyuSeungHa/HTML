@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>addEventListner</title>
+</head>
+<body>
+    <input type="text" id="tinput">
+    <h3 id="msg">FOCUS OUT</h3>
+</body>
+<script>
+    // <input type="text" id="tinput" focusin = "fsin()" focusout="fsout()">
+
+    //addEventListner : event를 깔끔하게 작업하기 위해 사용.
+    //document.addEventListner(event, function)
+    
+    var txt = document.getElementById("tinput");
+    txt.addEventListener("click", click1);
+    //같은 의미 => onclick = "click1()"
+    txt.addEventListener("focusin", fsin);
+    txt.addEventListener("focusout", fsout);
+    
+
+    function fsin(){
+        document.getElementById("msg").innerHTML="FOCUS IN";
+    }
+    function fsout(){
+        document.getElementById("msg").innerHTML="FOCUS OUT";
+    }
+</script>
+</html>

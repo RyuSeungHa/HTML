@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+
+<head>
+
+    <title>Timing</title>
+
+</head>
+
+<!-- body -->
+
+<body onload="setTime()">
+    <h1 id="msg"><span id="aa" style="color: red;">5</span>초 뒤 페이지가 이동합니다.</h1>
+    <h1>(<span style="color: red;">5</span>초 후 페이지가 이동 되도록)</h1>
+</body>
+
+<!-- script -->
+<script>
+    var myTime;
+    var x = 5;
+
+    function interval1() {
+        // setInterval(function(){},milisecond)
+        // 1000 milisecond = 1 second(1초)
+
+        myTime = setInterval(function () {
+            x--;
+                aa.innerHTML = x;
+        }, 1000);
+    }
+
+
+    function setTime() {
+        // setTimeout(function(){},milisecond);
+        interval1();
+        setTimeout(function () {
+            alert("확인을 누르면 페이지가 이동됩니다.");
+            location.href = "http://www.naver.com";
+        }, 5000)
+    }
+
+
+</script>
+
+</html>

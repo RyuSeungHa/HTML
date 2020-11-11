@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>window</title>
+    <style>
+        button{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button>창 열기</button>
+    <button>창 닫기</button>
+    <button>500 X 500</button>
+    <button>100X100만큼 늘리기</button>
+    
+</body>
+<script>
+    var btn = document.getElementsByTagName("button");
+
+    var mywindow;
+
+    btn[0].addEventListener("click",winOpen);
+    btn[1].addEventListener("click",winClose);
+    btn[2].addEventListener("click",win500);
+    btn[3].addEventListener("click",winResize);
+
+
+    function winOpen(){
+        mywindow = window.open("(6)screen.html","myWindow","width = 250, height = 250");
+    }
+    function winClose(){
+        mywindow.close();
+    }
+    function win500(){
+        mywindow.resizeTo(500,500);
+        //크기 100x100만큼 증가
+        mywindow.focus();
+    }
+    function winResize(){
+        mywindow.resizeBy(100,100);
+        //크기 100x100만큼 증가
+        mywindow.focus();
+    }
+    
+</script>
+</html>

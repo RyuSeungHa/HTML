@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<head>
+
+    <title>Mouse Position</title>
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<!-- body -->
+<body>
+    <div id="eventZone"></div>    
+    <h2>mouse Position: <span id="pos"></span></h2>
+    <h2>mouse Position: <span id="pos1"></span></h2>
+</body>
+
+<!-- script -->
+<script>
+    var mousezone = document.getElementById("eventZone");
+    mousezone.addEventListener("click", click1);
+    mousezone.addEventListener("dblclick",dblclick1);
+    mousezone.addEventListener("contextmenu",contextmenu1);
+    mousezone.addEventListener("mouseenter",mouseenter1);
+    mousezone.addEventListener("mouseout",mouseout1);
+    function click1(){
+        mousezone.innerHTML = "";
+        mousezone.style.backgroundColor = "pink";
+    }
+
+    function dblclick1(){
+        mousezone.innerHTML = "";
+        mousezone.style.backgroundColor = "aqua";
+    }
+    function contextmenu1(){
+        mousezone.innerHTML = "";
+        mousezone.style.backgroundColor = "blue";
+    }
+    function mouseenter1(){
+        mousezone.innerHTML = "";
+        mousezone.style.backgroundColor = "black";
+    }
+    function mouseout1(){
+        mousezone.innerHTML = "";
+        mousezone.style.backgroundColor = "yellow";
+    }
+    document.addEventListener("mousemove",mMove);
+
+    function mMove(move){
+        document.getElementById("pos").innerHTML = 
+        "브라우저(client) X : " + move.clientX + "/ Y :" + move.clientY;
+        document.getElementById("pos1").innerHTML = 
+        "모니터(screen) X : " + move.screenX + "/ Y :" + move.screenY;
+    }
+</script>
+
+</html>

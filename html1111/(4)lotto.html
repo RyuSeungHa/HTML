@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<head>
+
+    <title>로또 당첨!!</title>
+    <style>
+        .num{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin: 2px;
+            border: 1px solid white;
+            float: left;
+            border-radius: 50%;
+            background-color: white;
+        }
+        fieldset{
+            width: 216px;
+            text-align: center;
+            background-color: aquamarine;
+            border: 1px soliid black;
+        }
+        legend{
+            background-color: white;
+            border: 1px solid black;
+        }
+        #btn{
+            background-color: white;
+            border:0.5px solid black;;
+        }
+    </style>
+</head>
+
+<!-- body -->
+<body>
+    <fieldset>
+        <legend>로또번호 생성기</legend>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <button id="btn">번호 생성</button>
+    </fieldset>
+</body>
+
+<!-- script -->
+<script>
+    var lotto = [0, 0, 0, 0, 0, 0];
+    var i = 0;
+
+    var btn = document.getElementById("btn");
+    var numbers = document.getElementsByClassName("num");
+
+    btn.addEventListener("click", result1);
+
+    function result1(){
+        if(i>5){
+            alert("더이상 넣을 수 없습니다.");
+        }else{
+            lotto[i] = randomLotto(1,45);
+            numbers[i].innerHTML = lotto[i];
+            i++;
+        }
+
+        function randomLotto(min, max){
+            var rnd = Math.floor(Math.random() * (max-min+1) + min);
+            // (max-min+1) => 까지
+            // Math.random() : 0.000 ~ 0.999
+            // Math.floor() : 소수점 버림(내림)
+            // Math.round() : 소수점 반올림
+            // Math.ceil() : 소수점 올림
+
+            // 중복제거
+            for(var j in lotto){
+                if(lotto[j]==rnd){
+                    return randomLotto(min,max);
+                }
+            }
+
+            return rnd;
+        }
+    }
+</script>
+
+</html>
