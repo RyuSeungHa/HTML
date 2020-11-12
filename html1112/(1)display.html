@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS_display</title>
+    <style>
+        div{
+            border: 1px solid black;
+        }
+        #div1{
+            border: 1px solid red;
+            display: none;
+            /* none : 해당 태그를 보이지 않게 한다. */
+        }
+        #div2{
+            border: 1px solid orange;
+            display: inline;
+            /* inline : (1) 줄바꿈이 일어나지 않는다.*/
+            /*          (2) margin-top/bottom, width/height이 적용되지 않는다.*/
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 500px;
+            height: 500px;
+        }
+        #div3{
+            border: 1px solid yellow;
+            display: block;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 500px;
+            height: 500px;
+        }
+        #div4{
+            border: 1px solid green;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>div</div>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <div id="div4">div4</div>
+</body>
+</html>

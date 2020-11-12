@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+</head>
+
+<body>
+<button id="btn1">네이버로</button>    
+<button id="btn2">이전 페이지</button>
+<button id="btn3">Next Page</button>
+</body>
+
+<script>
+    btn1.addEventListener("click",goNaver);
+    btn2.addEventListener("click",goBack);
+    btn3.addEventListener("click",goForward);
+
+    function goNaver(){
+        location.href="http://www.naver.com";
+    }
+
+    function goBack(){
+        window.history.back();
+    }
+
+    function goForward(){
+        window.history.forward();
+    }
+
+</script>
+</html>

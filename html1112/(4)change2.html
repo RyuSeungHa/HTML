@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>이미지 변경</title>
+</head>
+
+<body>
+    <button id="btn1">텍스트표시(innerHTML)</button>
+    <button id="btn2">텍스트표시(write)</button>
+    <button id="btn3">이미지 변경</button>
+    <h1 id="elem"></h1>
+    <img id="image" src="pink.png" width="200px">
+</body>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var btn3 = document.getElementById("btn3");
+    var elem = document.getElementById("elem");
+    var image = document.getElementById("image");
+
+    btn1.addEventListener("click", btn11);
+    btn2.addEventListener("click", btn12);
+    btn3.addEventListener("click", btn13);
+
+
+    function btn11() {
+        document.getElementById("elem").innerHTML = "이몸 등장!"
+    }
+    function btn12() {
+        document.write("이이잉");
+    }
+    var i = 0;
+    function btn13() {
+
+        if (i == 0) {
+            image.src = "red.png";
+            i++;
+        } else{
+            image.src = "pink.png"
+            i=0;
+        }
+    }
+
+
+</script>
+
+</html>

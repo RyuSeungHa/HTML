@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>테스트</title>
+</head>
+
+<body>
+    <h1>당신이 입력한 값 : <span id="aa"></span></h1>
+    <input type="text" id="input2" onkeyup="print1()"> <span id="cc">(<span id="bbb">0</span>자 입력)</span>
+
+</body>
+<script>
+
+    function print1() {
+
+        var input1 = document.getElementById("input2").value;
+        var count1 = input1.length;
+        var cc = document.getElementById("cc")
+        if (count1 > 10) {
+            alert("10자리가 넘었다.")
+            input1 = input1.substring(0, 10);
+            document.getElementById("input2").value = input1;
+
+        } else if (count1 == 10) {
+            document.getElementById("aa").innerHTML = input1;
+            document.getElementById("bbb").innerHTML = (count1);
+            cc.style.color = "red";
+        } else if (count1 > 4 && count1 < 10) {
+            document.getElementById("aa").innerHTML = input1;
+            document.getElementById("bbb").innerHTML = (count1);
+            cc.style.color = "orange";
+        } else {
+            document.getElementById("aa").innerHTML = input1;
+            document.getElementById("bbb").innerHTML = (count1);
+        }
+
+    }
+
+</script>
+
+</html>
